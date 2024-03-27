@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.25)
+project(workshop-reflection LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN 0)
+set(CMAKE_CXX_VISIBILITY_PRESET default)
+
+include_directories(/usr/include/python3.11)
+include_directories(boost_1_84_0)
+include_directories(reflect)
+add_compile_options(-fno-ident)
+add_link_options(-s)
+add_subdirectory(nanobind)
+
+nanobind_add_module(ex1 LTO ex1.cpp)
+nanobind_add_module(ex2 LTO ex2.cpp)
+nanobind_add_module(ex3 LTO ex3.cpp)
+nanobind_add_module(ex4 LTO ex4.cpp)
+nanobind_add_module(ex5 LTO ex5.cpp)
+nanobind_add_module(ex6 LTO ex6.cpp)
+nanobind_add_module(ex7 LTO ex7.cpp)
+nanobind_add_module(ex8 LTO ex8.cpp)
